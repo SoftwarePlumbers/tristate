@@ -11,19 +11,9 @@ long as c = d, because 'UKNOWN or TRUE' is deemed TRUE.
 
 Truth tables for classic tri-state logic are below:
 
-|a		|b		| AND   |
-|-------|-------|-------|
-|TRUE	|TRUE	|TRUE	|
-|TRUE	|FALSE	|TRUE	|
-|FALSE	|TRUE	|TRUE	|
-|FALSE	|FALSE	|FALSE	|
-|UNKNOWN|FALSE	|UNKNOWN|
-|UNKNOWN|TRUE	|TRUE	|
-|FALSE	|UNKNOWN|UNKNOWN|
-|TRUE	|UNKNOWN|TRUE	|
-|UNKNOWN|UNKNOWN|UNKNOWN|
+### Truth Table for AND(a,b)
 
-|a		|b		| OR	|
+|a		|b		| AND	|
 |-------|-------|-------|
 |TRUE	|TRUE	|TRUE	|
 |TRUE	|FALSE	|FALSE	|
@@ -35,7 +25,24 @@ Truth tables for classic tri-state logic are below:
 |TRUE	|UNKNOWN|UNKNOWN|
 |UNKNOWN|UNKNOWN|UNKNOWN|
 
+### Truth Table for OR(a,b)
+
+|a		|b		| OR    |
+|-------|-------|-------|
+|TRUE	|TRUE	|TRUE	|
+|TRUE	|FALSE	|TRUE	|
+|FALSE	|TRUE	|TRUE	|
+|FALSE	|FALSE	|FALSE	|
+|UNKNOWN|FALSE	|UNKNOWN|
+|UNKNOWN|TRUE	|TRUE	|
+|FALSE	|UNKNOWN|UNKNOWN|
+|TRUE	|UNKNOWN|TRUE	|
+|UNKNOWN|UNKNOWN|UNKNOWN|
+
+
 If we map 'UKNOWN' to 'null' in javascript, the behaviour of the standard operators is frustratingly close to the above:
+
+### Comparison of Tristate AND(a,b) with a && b
 
 |a		|b		|a && b	| AND 	|
 |-------|-------|-------|-------|
@@ -49,7 +56,9 @@ If we map 'UKNOWN' to 'null' in javascript, the behaviour of the standard operat
 |false	|null	|false	|false	|
 |null	|null	|null	|null	|
 
-|a		|b		|a || b	| OR    |
+### Comparison of Tristate OR(a,b) with a || b
+
+|a		|b		| js or | OR    |
 |-------|-------|-------|-------|
 |false	|false	|false	|false	|
 |false	|true	|true	|true	|
@@ -86,7 +95,7 @@ if (a.and(c) === FALSE) console.log('hello');
 
 will log 'hello'.
 
-For the latest API documentation see [The Software Plumbers Site](http://docs.softwareplumbers.com/tristate/master)
+For the latest API documentation see [The Software Plumbers Site](http://docs.softwareplumbers.com/tristate-logic/master)
 
 ## Project Status
 

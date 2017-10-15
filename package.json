@@ -1,6 +1,6 @@
 {
   "name": "tristate-logic",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tri-state logic for javascript",
   "main": "src/tristate.js",
   "scripts": {
