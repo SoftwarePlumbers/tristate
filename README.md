@@ -1,4 +1,4 @@
-# ![Software Plumbers](http://docs.softwareplumbers.com/common/img/SquareIdent-160.png) Tristate Logig
+# ![Software Plumbers](http://docs.softwareplumbers.com/common/img/SquareIdent-160.png) Tristate Logic
 
 Library for working with tri-state (true/false/null) logic in javascript
 

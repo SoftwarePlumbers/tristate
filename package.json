@@ -1,5 +1,5 @@
 {
-  "name": "tristate",
+  "name": "tristate-logic",
   "version": "1.0.1",
   "description": "Tri-state logic for javascript",
   "main": "src/tristate.js",
