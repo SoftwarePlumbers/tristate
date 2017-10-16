@@ -83,6 +83,20 @@ class TriState {
 		return OR[this.tristate_value][TriState.from(other).tristate_value];		
 	}
 
+	/** Tri-state not function
+	*
+	* | this	| NOT     |
+	* |---------|---------|
+	* | TRUE    | FALSE	  |
+	* | FALSE   | TRUE    |
+	* | UNKNOWN | UNKNOWN |
+	*
+	* @returns {TriState} - TRUE, FALSE, or UNKNOWN per truth table
+	*/
+	not() {
+		return NOT[this.tristate_value];
+	}
+
 	/** Convert boolean value to tri-state value
 	*
 	* | value | result |
@@ -137,6 +151,11 @@ var AND = [ [FALSE, FALSE, FALSE], [FALSE, TRUE, UNKNOWN], [FALSE, UNKNOWN, UNKN
 */
 var OR = [ [FALSE, TRUE, UNKNOWN], [TRUE, TRUE, TRUE], [UNKNOWN, TRUE, UNKNOWN] ];
 
+/** Lookup table for NOT function
+* @private
+*/
+var NOT = [ TRUE, FALSE, UNKNOWN ];
+
 /** tri-state AND operation
 *
 *  | a     | b     | a && b | AND 	|
@@ -181,5 +200,19 @@ function or(a,b) {
 	return TriState.from(a).orBoolean(b).boolean;
 }
 
+/** tri-state NOT operation
+* 
+* | a     | !a    | NOT   |
+* |-------|-------|-------|
+* | false | true  | true  |
+* | true  | false | false |
+* | null  | true  | null  |
+*
+* @param a {boolean}
+* @returns {boolean} NOT(a) as defined in the table.
+*/
+function not(a) {
+	return TriState.from(a).not().boolean;
+}
 
 module.exports = { TRUE, FALSE, UNKNOWN, and, or, TriState };

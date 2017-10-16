@@ -25,7 +25,7 @@ describe('tristate logic', () => {
 		expect(UNKNOWN.boolean).to.be.null;
 	});
 
-	it('behaves same as boolean logic for TRUE, FALSE', ()=> {
+	it('and, or behave same as boolean logic for TRUE, FALSE', ()=> {
 		for ({a,b} of BOOLEANS) {
 			debug(a,b);
 			expect(a.and(b).boolean).to.equal(a.boolean && b.boolean);
@@ -33,6 +33,16 @@ describe('tristate logic', () => {
 			expect(and(a.boolean,b.boolean)).to.equal(a.boolean && b.boolean);
 			expect(or(a.boolean,b.boolean)).to.equal(a.boolean || b.boolean);
 		}
+	});
+
+	it('not same as boolean logic for TRUE, FALSE', ()=> {
+		for (a of [TRUE,FALSE]) {
+			expect(a.not().boolean).to.equal(!a.boolean);
+		}
+	});
+
+	it('not UNKNOWN === UNKNOWN', ()=>{
+		expect(UNKNOWN.not()).to.equal(UNKNOWN);
 	});
 
 	it('has correct behavior for unknowns', ()=> {
