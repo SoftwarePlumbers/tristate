@@ -1,6 +1,6 @@
 {
   "name": "tristate-logic",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Tri-state logic for javascript",
   "main": "src/tristate.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/softwareplumbers/tristate.git"
+    "url": "git+https://github.com/softwareplumbers/tristate-logic.git"
   },
   "keywords": [
     "logic",
@@ -22,9 +22,9 @@
   "author": "Jonathan Essex",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/softwareplumbers/tristate/issues"
+    "url": "https://github.com/softwareplumbers/tristate-logic/issues"
   },
-  "homepage": "https://github.com/softwareplumbers/tristate#readme",
+  "homepage": "https://github.com/softwareplumbers/tristate-logic#readme",
   "devDependencies": {
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
